@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: movie-app
-          image: kishorebandaru002/multibranch-flask-app:latest
+          image: kishorebandaru002/multibranch-flask-app:build-11
           ports:
             - containerPort: 5000
 
