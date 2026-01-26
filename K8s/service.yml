@@ -1,17 +1,11 @@
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: movie-app
-  namespace: default
-  labels:
-    app: movie-app
+  name: movie-app-service
 spec:
-  type: ClusterIP          # Internal service (best for Argo + Prod)
+  type: LoadBalancer
   selector:
-    app: movie-app         # ✅ MUST match pod labels
+    app: movie-app
   ports:
-    - name: http
-      port: 80             # Service port
-      targetPort: 5000     # Container port
-      protocol: TCP
+    - port: 80
+      targetPort: 5000
